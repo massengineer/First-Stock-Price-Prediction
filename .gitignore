@@ -1,0 +1,58 @@
+# Ignore virtual environment folders (Conda, venv)
+venv/
+.myenv/
+env/
+conda-meta/
+bin/
+Scripts/
+Lib/
+include/
+
+# Ignore Python cache files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Ignore Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Ignore datasets and large files (optional)
+data/raw/
+data/processed/
+*.csv
+*.xlsx
+*.json
+*.h5
+*.sqlite
+
+# Ignore model checkpoints and logs
+checkpoints/
+logs/
+*.h5
+*.pb
+*.ckpt
+*.tflite
+*.onnx
+
+# Ignore compiled files
+*.so
+*.dll
+*.dylib
+
+# Ignore IDE and editor settings
+.vscode/
+.idea/
+*.sublime-workspace
+
+# Ignore environment and dependency files
+*.env
+.envrc
+*.log
+
+# Ignore Git merge conflict files
+*.orig
+
+# Ignore system files (Mac & Windows)
+.DS_Store
+Thumbs.db
