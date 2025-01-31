@@ -1,5 +1,0 @@
-pandas
-numpy
-matplotlib
-seaborn
-# pip install -r requirements.txt allows you to install all of these in one go from this file
