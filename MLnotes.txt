@@ -68,3 +68,21 @@ well on new, unseen data. It’s like memorizing answers to a test rather
 than understanding the material. The goal is to build models that 
 generalize well, meaning they can make accurate predictions on new data 
 and not just on the data they were trained on.
+
+Input Features:
+Definition: The input features (also called independent variables or 
+predictors) are the data that the model uses to make predictions.
+
+True Labels:
+Definition: The true labels (also called dependent variables or targets) 
+are the actual values that we are trying to predict. These are the 
+"ground truth" values the model should aim to predict as closely as 
+possible.
+
+Relationship Between Features and Labels:
+The model uses the input features to make a prediction, and then we 
+compare that prediction to the true label (the real value we are trying 
+to predict).
+
+The model learns from this comparison (through loss functions like MSE or 
+RMSE) to minimize the difference between predicted and true values.

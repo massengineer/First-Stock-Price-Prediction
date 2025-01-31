@@ -90,7 +90,7 @@ scaled_data = scaler.fit_transform(dataset)
 train_data = scaled_data[
     0 : int(training), :
 ]  # ":" means all of the columns are looked at
-# prepare feature and labels
+# Prepare feature and labels
 x_train = []
 y_train = []
 
@@ -133,3 +133,41 @@ model.compile(optimizer="adam", loss="mean_squared_error")
 # Specifies how the model will be trained (which optimizer and loss function to use).
 history = model.fit(x_train, y_train, epochs=10)
 # Starts the training process by using the training data and iterating over it for a certain number of epochs.
+
+test_data = scaled_data[training - 60 :, :]
+x_test = []
+y_test = dataset[training:, :]
+for i in range(60, len(test_data)):
+    x_test.append(test_data[i - 60 : i, 0])
+
+x_test = np.array(x_test)
+# The shape (x_test.shape[0], x_test.shape[1], 1) reshapes x_test to be a 3D array because LSTM layers expect input in this form: (samples, timesteps, features)
+x_test = np.reshape(x_test, (x_test.shape[0], x_test.shape[1], 1))
+
+# Predict the testing data
+predictions = model.predict(x_test)
+# Applies the inverse transformation to convert the predictions back to their original range (real stock prices).
+predictions = scaler.inverse_transform(predictions)
+
+
+# Evaluation metrics
+mse = np.mean(((predictions - y_test) ** 2))
+# calculates the Mean Squared Error (MSE) between the predicted and true values.
+print("MSE", mse)
+print("RMSE", np.sqrt(mse))
+# This calculates and prints the Root Mean Squared Error (RMSE).
+
+# Visualising results
+train = apple[:training]
+test = apple[training:]
+test["Predictions"] = predictions
+
+plt.figure(figsize=(10, 8))
+plt.plot(train["date"], train["close"])
+plt.plot(test["date"], test[["close", "Predictions"]])
+plt.title("Apple Stock Close Price")
+plt.xlabel("Date")
+plt.ylabel("Close")
+plt.legend(["Train", "Test", "Predictions"])
+
+# This code is modified by Susobhan Akhuli
