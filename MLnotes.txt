@@ -1,0 +1,70 @@
+Tensor Flow:
+Tensors are not just numbers—they carry more information, such as their 
+shape (dimensions) and the operations you can apply to them. In deep 
+learning frameworks like TensorFlow (which is the backend of Keras), 
+tensors are the fundamental data structures for all calculations and 
+operations within the model.
+
+Key Point:
+In summary, a tensor is simply a multi-dimensional array (or matrix) 
+used to represent data in a neural network. In the Sequential model, 
+each layer processes a tensor and passes its output as another tensor 
+to the next layer, until you reach the final output layer where you get 
+the model’s predictions.
+
+In neural networks, an activation function is a mathematical function 
+applied to the output of each neuron in the network. It introduces 
+non-linearity into the network, which allows the model to learn complex 
+patterns and make decisions that are not just linear combinations of the 
+input features. Without an activation function, a neural network would 
+behave like a linear regression model and would only be able to learn 
+linear relationships between inputs and outputs, which limits its power.
+
+What Does "No Activation Function" Mean?
+When a layer in a neural network has no activation function, it means 
+that the raw output of the neuron (the weighted sum of its inputs) is 
+directly passed to the next layer without applying any non-linearity. 
+This is typically done for the output layer in certain tasks, depending 
+on the nature of the problem.
+
+For example:
+
+In regression problems, where the goal is to predict a continuous value 
+(like stock prices), the output layer might not have an activation 
+function because the model is simply trying to predict a real number, 
+and no non-linearity is needed.
+
+In the hidden layers, however, activation functions (like ReLU, Sigmoid, 
+or Tanh) are commonly used to introduce non-linearity and help the 
+network learn complex patterns.
+
+Loss:
+In machine learning, loss refers to the difference between the model's 
+predicted output and the actual target value (the "truth" or the expected 
+result). The loss value quantifies how well or poorly the model is 
+performing.
+
+More Specifically:
+Loss represents how "bad" the model's predictions are when compared to 
+the actual values.
+
+The goal during training is to minimize the loss (i.e., make the model's 
+predictions as close as possible to the actual target values).
+
+How Loss Works:
+When the prediction is close to the actual value, the loss will be small.
+
+When the prediction is far from the actual value, the loss will be larger.
+
+Overfitting:
+Overfitting is a problem that occurs when a machine learning model learns 
+not only the underlying patterns in the training data but also the noise 
+or random fluctuations. This makes the model perform very well on the 
+training data but poorly on unseen data (test or validation data).
+
+In Summary:
+Overfitting is bad because it reduces the model's ability to perform 
+well on new, unseen data. It’s like memorizing answers to a test rather 
+than understanding the material. The goal is to build models that 
+generalize well, meaning they can make accurate predictions on new data 
+and not just on the data they were trained on.
