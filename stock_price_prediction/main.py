@@ -13,7 +13,7 @@ from tensorflow import keras
 warnings.filterwarnings("ignore")
 
 data = pd.read_csv(
-    r"C:\Users\louis\Documents\PythonPortfolio\FirstPythonProj\data\raw\all_stocks_5yr.csv\all_stocks_5yr.csv",
+    r"..\data\raw\all_stocks_5yr\all_stocks_5yr.csv",
     delimiter=",",
     # The delimiter tells pandas how to split each row of data into different columns.
     # In this case, it tells the function that each value in a row is separated by a comma.
