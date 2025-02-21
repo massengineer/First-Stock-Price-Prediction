@@ -90,6 +90,9 @@ Overfitting occurs when the model learns noise in the training data, performing 
 - Optimize the model architecture for better performance.
 - Implement additional evaluation metrics beyond MSE and RMSE.
 - Explore other deep learning models such as GRU or Transformer-based architectures.
+- Add classes.
+- Add testing modules for test driven development.
+- Add the MSE and RMSE values to the page and see how they would change with a different dropout rate as 0.5 seems quite excessive.
 
 ---
 This README provides a structured explanation of the stock price prediction project, covering data preparation, model training, evaluation, and key concepts.
