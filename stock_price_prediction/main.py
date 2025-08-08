@@ -13,7 +13,7 @@ from tensorflow import keras
 warnings.filterwarnings("ignore")
 
 data = pd.read_csv(
-    r"..\data\raw\all_stocks_5yr\all_stocks_5yr.csv",
+    r"..\data\all_stocks_5yr.csv",
     delimiter=",",
     # The delimiter tells pandas how to split each row of data into different columns.
     # In this case, it tells the function that each value in a row is separated by a comma.
@@ -48,8 +48,8 @@ for index, company in enumerate(companies, 1):
     # So, enumerate() is a useful way to get both the index and the item in a loop.
     plt.subplot(3, 3, index)
     c = data[data["Name"] == company]
-    plt.plot(c["date"], c["close"], c="r", label="close", marker="+")
-    plt.plot(c["date"], c["open"], c="g", label="open", marker="^")
+    plt.plot(c["date"], c["close"], c="r", label="close", marker="|")
+    plt.plot(c["date"], c["open"], c="g", label="open", marker="|")
     plt.title(company)
     plt.legend()
     plt.tight_layout()
