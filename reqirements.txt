@@ -1,8 +1,0 @@
-ipykernel
-python-dotenv
-matplotlib
-numpy
-pandas
-seaborn
-tensorflow
-scikit-learn
